@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # a script to be executed in the background
+
 while true; do
-	echo "I am alive!" > /tmp/my_process
+	echo "I am alive!" >> /tmp/my_process
 	sleep 2
 done
