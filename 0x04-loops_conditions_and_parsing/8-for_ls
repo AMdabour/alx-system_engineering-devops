@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# displays the files in the cureent directory in a list format
+for file in *; do
+	if [ -f "$file" ] && [[ $file == *-* ]]; then
+		echo "$(echo "$file" | cut -d '-' -f 2)"
+	fi
+done
