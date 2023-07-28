@@ -2,6 +2,7 @@
 # displays the files in the cureent directory in a list format
 for file in *; do
 	if [ -f "$file" ] && [[ $file == *-* ]]; then
-		echo "$(echo "$file" | cut -d '-' -f 2)"
+		name=$(echo "$file" | cut -d '-' -f 2)
+		echo "$name"
 	fi
 done
