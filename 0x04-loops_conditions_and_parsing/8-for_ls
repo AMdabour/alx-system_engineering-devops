@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # displays the files in the cureent directory in a list format
 for file in *; do
-	if [[ $file == *-* ]]; then
-		name=$(echo "$file" | cut -d '-' -f 2-)
-		echo "$name"
-	fi
+	name=$(echo "$file" | cut -d '-' -f 2-)
+	echo "$name"
 done
