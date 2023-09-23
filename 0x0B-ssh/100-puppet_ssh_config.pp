@@ -1,5 +1,7 @@
 # setting up my ssh client config file
 
+include stdlib
+
 file_line { 'disabling password authentication':
   ensure  => present,
   path    => '/etc/ssh/ssh_config',
