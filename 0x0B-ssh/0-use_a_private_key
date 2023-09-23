@@ -3,4 +3,4 @@
 
 private_key = "~/.ssh/school"
 
-ssh -i $private_key ubuntu@18.204.7.111
+ssh -i "$private_key" ubuntu@18.204.7.111
