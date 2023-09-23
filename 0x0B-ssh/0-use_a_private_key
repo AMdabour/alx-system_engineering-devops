@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # connect to your server with user 'ubuntu'
-ssh -l ~/.ssh/school ubuntu@18.204.7.111
+
+private_key = "~/.ssh/school"
+
+ssh -l $private_key ubuntu@18.204.7.111
