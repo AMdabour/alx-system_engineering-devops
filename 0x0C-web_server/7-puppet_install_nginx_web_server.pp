@@ -15,6 +15,10 @@ file { '/var/www/html/index.html':
   content => 'Hello World!',
 }
 
+file { '/etc/nginx/sites-available/default':
+  ensure => present,
+}
+
 service { 'nginx':
   ensure    => running,
   subscribe => File['/etc/nginx/sites-available/default'],
