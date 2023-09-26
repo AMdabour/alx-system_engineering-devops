@@ -1,12 +1,7 @@
 # Install Nginx web server (w/ Puppet)
 
-exec { 'apt update':
-  command => '/etc/bin/apt update',
-}
-
 package { 'nginx':
   ensure  => installed,
-  require => Exec['apt update'],
 }
 
 file_line { 'add redirec':
