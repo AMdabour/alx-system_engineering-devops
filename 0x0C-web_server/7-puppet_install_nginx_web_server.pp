@@ -2,7 +2,6 @@
 
 package { 'nginx':
   ensure  => installed,
-  require => Exec['apt update'],
 }
 
 file_line { 'add redirec':
