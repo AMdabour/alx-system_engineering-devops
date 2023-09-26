@@ -1,7 +1,5 @@
 # Install Nginx web server (w/ Puppet)
 
-include stdlib
-
 exec { 'apt update':
   command => '/etc/bin/apt update',
 }
@@ -24,6 +22,5 @@ file { '/var/www/html/index.html':
 
 service { 'nginx':
   ensure    => running,
-  subscribe => File['/etc/nginx/sites-available/default'],
   require   => Package['nginx'],
 }
