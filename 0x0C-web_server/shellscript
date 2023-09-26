@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-redirec="location /redirect_me {
-	return 301 https://www.youtube.com\$request_uri
-	}"
-echo "$redirec"
