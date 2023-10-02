@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# installs nginx web server on your server and do some stuff with its configurations
+
+sudo apt update
+sudo apt install nginx -y
+
+echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+sudo tee /etc/nginx/sites-available/default > /dev/null <<EOF
+server {
+	listen 80;
+	listen [::]:80 default_server;
+	add_header X-Served-By $HOSTNAME;
+	root /var/www/html;
+	index index.html index.htm;
+	location /redirect_me {
+        	return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+	}
+
+	error_page 404 /404.html;
+	location = /404.html {
+		root /var/www/html;
+		internal;
+	}
+}
+EOF
+sudo service nginx restart
