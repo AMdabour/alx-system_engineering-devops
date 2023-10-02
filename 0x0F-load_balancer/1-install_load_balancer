@@ -12,7 +12,7 @@ sudo apt-get install haproxy=2.0.\*
 
 sudo apt update
 
-HAproxy_conf = "\
+HAproxy_conf="\
 	frontend http
 	    bind *:80
 	    mode http
