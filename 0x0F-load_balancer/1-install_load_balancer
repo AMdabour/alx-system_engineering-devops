@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # Install and configure HAproxy on your lb-01 server
 
+# installing HAproxy PPA
+sudo add-apt-repository ppa:vbernat/haproxy-2.4 -y
+
+# updating
 sudo apt update
 sudo apt upgrade -y
 
