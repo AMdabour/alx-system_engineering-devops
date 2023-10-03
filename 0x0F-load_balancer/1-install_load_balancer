@@ -38,10 +38,12 @@ defaults
 
 frontend http
     bind *:80
+    mode http
     default_backend web_servers
 
 backend web_servers
     balance roundrobin
+    mode http
     server 376721-web-01 18.204.7.111:80 check
     server 376721-web-02 100.26.213.167:80 check
 "
